@@ -1,0 +1,103 @@
+/**
+ * @package jp.co.b-shock.www
+ * @author 小石達也 <tkoishi@b-shock.co.jp>
+ */
+
+body {
+	background: green url(/images/bg.gif);
+	margin-bottom: 8px;
+	margin-left: 64px;
+}
+
+p {
+	color: #fff;
+	font-size: 12px;
+	font-family: serif;
+	margin-left: 36px;
+}
+
+li {
+	color: #fff;
+	font-size: 12px;
+	font-family: serif;
+	margin-left: 12px;
+}
+
+a {
+	color: #9acd32;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+code {
+	font-family: monospace;
+}
+
+h1 {
+	color: #0e490e;
+	font-size: 18px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	font-family: sans-serif;
+}
+
+h2 {
+	color: #0e490e;
+	font-size: 14px;
+	margin-top: 14px;
+	margin-left: 12px;
+	border-bottom: 2px solid #0e490e;
+}
+
+h3 {
+	color: #0e490e;
+	font-size: 12px;
+	text-decoration: underline;
+	margin-top: 12px;
+	margin-left: 24px;
+}
+
+.map_container {
+	margin-left: 36px;
+}
+
+p.signature {
+	text-align: right;
+}
+
+header {
+	width: 640px;
+	margin-bottom: 24px;
+	font-family: serif;
+	font-size: 12px;
+	color: white;
+}
+
+#header_usa {
+	text-align: right;
+}
+
+article {
+	width: 640px;
+	color: white;
+}
+
+footer {
+	width: 640px;
+	margin-top: 24px;
+	font-family: serif;
+	font-size: 12px;
+	color: white;
+	text-align: right;
+}
+
+.alert {
+	color: red;
+}
