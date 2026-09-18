@@ -1,64 +1,336 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=750">
-<title>有限会社 ビーショック</title>
-<link rel="stylesheet" href="bshock.css">
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyAmndtwEGM1gFl1fBHYo4jK2OKqEls0-Dg"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="有限会社ビーショックの個人情報保護方針。" />
+  <title>個人情報保護方針 | 有限会社ビーショック</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1f2931;
+      --muted: #66727b;
+      --line: #d9dfe3;
+      --blue: #8fa2b0;
+      --blue-deep: #657b8c;
+      --mist: #eef2f4;
+      --sand: #b8aea0;
+      --white: #ffffff;
+      --serif: "Cormorant Garamond", "Times New Roman", serif;
+      --sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--sans);
+      font-weight: 300;
+      letter-spacing: .045em;
+      line-height: 1.95;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 34px;
+      background: rgba(31,41,49,.9);
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: .34em;
+    }
+    .brand small {
+      display: block;
+      margin-top: -7px;
+      font-family: var(--sans);
+      font-size: 7px;
+      letter-spacing: .24em;
+      opacity: .8;
+    }
+    .nav { display: flex; gap: 24px; font-size: 10px; }
+    .hero {
+      min-height: 400px;
+      display: grid;
+      align-items: end;
+      padding: 120px 6vw 70px;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8,15,21,.54), rgba(15,26,34,.26)),
+        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat;
+    }
+    .hero small { font-size: 10px; letter-spacing: .24em; }
+    .hero h1 {
+      margin: 8px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 500;
+      letter-spacing: .06em;
+      line-height: 1.15;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 20px 0 0;
+      font-size: 12px;
+      line-height: 2.15;
+      color: rgba(255,255,255,.92);
+    }
+    .content {
+      padding: 96px 6vw 110px;
+      background: linear-gradient(180deg, #f8fafb 0%, #ffffff 100%);
+    }
+    .content-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .side-card,
+    .main-card {
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .side-card { padding: 28px 26px; position: sticky; top: 100px; }
+    .side-card h2 {
+      margin: 0 0 16px;
+      color: var(--blue-deep);
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: .06em;
+    }
+    .side-card a {
+      display: block;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      color: #4c565e;
+    }
+    .side-card a:last-child { border-bottom: 0; }
+    .main-card { padding: 42px 44px 48px; }
+    .policy-block + .policy-block {
+      margin-top: 42px;
+      padding-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+    .policy-block h3 {
+      margin: 0 0 14px;
+      color: var(--blue-deep);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: .08em;
+    }
+    .policy-block p, .policy-block li {
+      font-size: 13px;
+      color: #4c565e;
+    }
+    .policy-block ul {
+      margin: 0;
+      padding-left: 1.3em;
+    }
+    .contact-box {
+      margin-top: 18px;
+      padding: 20px 22px;
+      background: var(--mist);
+      font-size: 13px;
+      line-height: 2;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 168px;
+      height: 44px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: .14em;
+      transition: background .25s ease, transform .25s ease;
+    }
+    .button:hover { background: var(--blue-deep); transform: translateY(-2px); }
+    .button.ghost {
+      background: #fff;
+      color: var(--blue-deep);
+      border: 1px solid var(--line);
+    }
+    .site-footer {
+      background: var(--blue);
+      color: #fff;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 8px;
+      letter-spacing: .12em;
+    }
+    @media (max-width: 900px) {
+      .content-wrap { grid-template-columns: 1fr; }
+      .side-card { position: static; }
+    }
+    @media (max-width: 560px) {
+      .site-header { padding: 0 18px; height: 64px; }
+      .nav { gap: 14px; font-size: 9px; }
+      .hero { padding: 90px 24px 56px; min-height: 330px; }
+      .content { padding: 72px 24px 82px; }
+      .main-card { padding: 30px 22px 34px; }
+      .side-card { padding: 24px 20px; }
+      .cta-row { flex-direction: column; }
+      .button { width: 100%; }
+    }
+  
+
+    /* 文字の視認性改善 */
+    body { font-weight: 400; }
+    .nav,
+    .hero small,
+    .hero p,
+    .side-card a,
+    .policy-block p,
+    .policy-block li,
+    .contact-box,
+    .site-footer { font-weight: 400; }
+    .side-card h2,
+    .policy-block h3,
+    .button { font-weight: 500; }
+    .hero h1 { font-weight: 600; }
+
+
+    /* 文字の視認性改善：全体をさらに一段階太く調整 */
+    body,
+    .hero p,
+    .side-card a,
+    .policy-block p,
+    .policy-block li,
+    .contact-box,
+    .site-footer { font-weight: 500; }
+    .nav,
+    .hero small,
+    .button { font-weight: 600; }
+    .brand,
+    .hero h1,
+    .side-card h2,
+    .policy-block h3 { font-weight: 700; }
+  
+    .brand { display:inline-flex; align-items:center; line-height:1; }
+    .brand img { display:block; width:auto; height:52px; object-fit:contain; }
+    @media (max-width:560px) { .brand img { height:40px; } }
+
+  </style>
 </head>
 <body>
-<header>
-<h1><a href="/"><img src="images/b-shock.gif" alt="b-shock." height="65" width="417"></a><br>有限会社ビーショック</h1>
-</header>
-<article>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="b-shock. ホーム"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAm8AAACqCAYAAAD7jKimAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACkHSURBVHhe7d17XFRl/gfwDzADMwMojCBCKl5ABDTxxhaEkssP81K6Zbvlalu7be56qc3U+um2625rL9fNWjfd1lrbTLfftqlRm5dYM0WlwrylQgKKInLRcbjPDMwAvz8SXs4jc4bLzDBn+LxfL/75PqdeNXPmnM/znOd5jhf+OasFRERERCQL3mKBiIiIiNwXwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjDC8EREREckIwxsRERGRjHjhn7NaxKK7mR04TCxZqW8y4b+GUrFMRD0o0U+LCN8gsWylyKTDaXONWCYiF+I9Vn5kEd6Wh6fgrgGjxXKbh07+VSwRkRvYOXahWGrzZfkZFNRdRUbtRbGJiFyI91j5kUV42zl2IR6MTRfLbbzemy2WiMgNtMzNEEttduVlYlvhPoY3oh7Ge6z8cM4bERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJCMMbERERkYwwvBERERHJiBf+OatFLLqbnWMX4sHYdLHcxuu92WLpNol+WvTxUaGmyYQ+PioE+KjEQ1DaWAUAiPANQkbtRbGZqENGKjQY7BuMiw16FDYZ8WS/BAT7BoqHtauysRZ/v3EKUT5qDPPTorixEt9aDOJh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" alt="b-shock."></a>
+    <nav class="nav" aria-label="サブナビゲーション">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#service">SERVICE</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+  </header>
 
-<section>
-<h1>個人情報保護方針</h1>
-<p>有限会社ビーショック（以下、弊社とする）は、ウェブアプリケーション開発や
-システムの運用に伴う個人情報の取り扱いに、細心の注意を払います。</p>
-<h2>1. 個人情報管理責任者</h2>
-<p>弊社が取り扱う個人情報につきましては、以下の者が責任を持って管理いたします。</p>
-<p>
-有限会社ビーショック<br>
-取締役 小石達也<br>
-東京都港区東麻布1-29-10 インペリアル麻布301<br>
-</p>
-<h2>2. 個人情報の収集目的</h2>
-<p>弊社は個人情報を収集する際、収集目的を明確にした上で、目的の範囲内に限り収集を行います。</p>
-<h2>3. 個人情報の第三者への開示</h2>
-<p>個人情報の利用や提供に際しては、その目的の範囲内でのみの開示を行ないます。</p>
-<h2>4. 個人情報保護に関する法令等への対応</h2>
-<p>個人情報保護に関する法令、国が定める指針及びその他の規範を遵守致します。</p>
-<h2>5. 個人情報の漏えい、滅失、き損等のリスクへの対応</h2>
-<p>個人情報の漏えい、滅失、き損などのリスクに対しては、合理的な安全対策を講じて防止すべく
-事業の実情に合致した経営資源を注入し、個人情報セキュリティ体制を継続的に向上させます。<br>
-また、万一の際には速やかに是正措置を講じます。</p>
-<h2>6. 個人情報の扱いに関する苦情及び相談への対応</h2>
-<p>個人情報取扱いに関する苦情及び相談に対しては、迅速かつ誠実に、
-適切な対応をさせていただきます。</p>
-<h2>7. 個人情報保護方針の改善</h2>
-<p>弊社の個人情報保護方針は、当社を取り巻く環境の変化を踏まえ、適時・適切に見直して
-その改善を継続的に推進します。</p>
-<p class="signature">
-有限会社ビーショック<br>
-個人情報管理責任者 小石達也</p>
+  <section class="hero">
+    <div>
+      <small>PRIVACY POLICY</small>
+      <h1>個人情報保護方針</h1>
+      <p>
+        有限会社ビーショックは、ウェブアプリケーション等のソフトウェアの製造・販売に関わる事業活動において、
+        お客様および関係者の個人情報を適切に取り扱い、安全に管理することを重要な責務と考えています。
+      </p>
+    </div>
+  </section>
 
-<h2>更新履歴</h2>
-<p>
-2009年1月1日 個人情報保護責任者の所在地を改定<br>
-2007年8月20日 制定<br>
-</p>
-</section>
+  <main class="content">
+    <div class="content-wrap">
+      <aside class="side-card">
+        <h2>CONTENTS</h2>
+        <a href="#policy-1">1. 個人情報の取得</a>
+        <a href="#policy-2">2. 利用目的</a>
+        <a href="#policy-3">3. 第三者提供</a>
+        <a href="#policy-4">4. 安全管理</a>
+        <a href="#policy-5">5. 開示・訂正等</a>
+        <a href="#policy-6">6. お問い合わせ窓口</a>
+      </aside>
 
-<p>→<a href="/">戻る</a></p>
+      <section class="main-card">
+        <div class="policy-block" id="policy-1">
+          <h3>1. 個人情報の取得</h3>
+          <p>
+            当社は、お問い合わせ、サービス提供、取引に伴う連絡等に必要な範囲で、適法かつ公正な手段により個人情報を取得します。
+          </p>
+        </div>
 
-</article>
-<footer>
-<div>
-<a href="http://goya.b-shock.org/" target="_blank"><img src="images/goya.gif" alt="うさぎ小屋" height="31" width="88"></a><br>
-</div>
-</footer>
+        <div class="policy-block" id="policy-2">
+          <h3>2. 個人情報の利用目的</h3>
+          <ul>
+            <li>お問い合わせへの回答およびご連絡のため</li>
+            <li>サービス提供、契約履行、保守運用対応のため</li>
+            <li>ご提案、資料送付、打ち合わせ調整のため</li>
+            <li>品質向上およびサービス改善のため</li>
+            <li>法令等に基づく対応のため</li>
+          </ul>
+        </div>
 
+        <div class="policy-block" id="policy-3">
+          <h3>3. 第三者提供</h3>
+          <p>
+            当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。
+            なお、業務委託先に個人情報の取扱いを委託する場合は、適切な委託先を選定し、必要な監督を行います。
+          </p>
+        </div>
+
+        <div class="policy-block" id="policy-4">
+          <h3>4. 安全管理</h3>
+          <p>
+            当社は、個人情報への不正アクセス、漏えい、滅失、き損等を防止するため、組織的・人的・物理的・技術的な安全管理措置を講じます。
+          </p>
+        </div>
+
+        <div class="policy-block" id="policy-5">
+          <h3>5. 開示・訂正等</h3>
+          <p>
+            ご本人から、個人情報の開示、訂正、利用停止、削除等のご請求があった場合は、ご本人確認のうえ、法令に基づき適切に対応します。
+          </p>
+        </div>
+
+        <div class="policy-block" id="policy-6">
+          <h3>6. お問い合わせ窓口</h3>
+          <p>
+            個人情報の取扱いに関するお問い合わせは、下記窓口までご連絡ください。
+          </p>
+          <div class="contact-box">
+            有限会社ビーショック<br>
+            〒106-0044 東京都港区東麻布1-13-2 ライオンズマンション麻布303<br>
+            E-mail：info@b-shock.co.jp
+          </div>
+          <div class="cta-row">
+            <a class="button" href="index.html#contact">お問い合わせフォームへ</a>
+            <a class="button ghost" href="index.html">トップページへ戻る</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> b-shock. co., ltd. All Rights Reserved.</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
